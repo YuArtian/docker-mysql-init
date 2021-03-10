@@ -29,3 +29,5 @@ COPY ./mysql_scripts/$INSTALL_DATA_SHELL $AUTO_RUN_DIR/
 
 #给执行文件增加可执行权限
 RUN chmod a+x $AUTO_RUN_DIR/$INSTALL_DATA_SHELL
+
+CMD [ "--max_connections=1000","--character-set-server=utf8mb4","--collation-server=utf8mb4_general_ci", "--default-authentication-plugin=mysql_native_password"]
